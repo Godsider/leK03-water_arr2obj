@@ -46,7 +46,7 @@ var reducer = function (needNewRegion, currElem, currIndex, theArray) {
       waterTemp = 0 // starting a new puddle
       borderIndexL = currIndex // using current position as a new left border
       currDepth = Math.min(theArray[borderIndexL], theArray[borderIndexR]) // getting a max possible water level between current borders
-    } else { // no new puddle, possible water found
+    } else { // no new puddle, possible water found!
       waterTemp += currDepth - currElem // accumulating water for the current puddle
     }
     return false // looking for more water
@@ -60,7 +60,7 @@ var reducer = function (needNewRegion, currElem, currIndex, theArray) {
 
 var getWater = function (array) {
   console.log(array)
-  if (array.length < 3) return 0 // acting fast on too small arrays not able to contain any puddle
+  if (array.length < 3) return 0 // acting fast on arrays too small to contain any puddle
 
   waterAll = waterTemp = currDepth = 0 // resetting water amounts
   borderIndexR = borderIndexL = 0 // setting range borders to the start of the array
